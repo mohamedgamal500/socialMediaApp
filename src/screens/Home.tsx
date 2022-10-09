@@ -1,29 +1,24 @@
-import { useNavigation } from '@react-navigation/native';
-import React, {memo, useCallback} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React from 'react';
 import {
   View,
   StyleSheet,
   ScrollView,
-  Image,
   Text,
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
 import PostItem from '../components/PostItem';
-// import Text from "components/Text";
-// import Theme from "style/Theme";
-// import PatientItem from "components/PatientItem";
 
 interface PostInferface {
   id: number;
   user_id: number;
   title: string;
-  body:  string;
+  body: string;
 }
 
-
 const Home = () => {
-  const { navigate } = useNavigation();
+  const {navigate} = useNavigation();
 
   const posts = [
     {
@@ -112,9 +107,9 @@ const Home = () => {
     },
   ];
 
-  const onPress = (item:PostInferface) => {
+  const onPress = (item: PostInferface) => {
     navigate('PostDetails', {
-      item
+      item,
     });
   };
   return (
@@ -128,7 +123,11 @@ const Home = () => {
             paddingHorizontal: 24,
           }}>
           {posts.map(item => (
-            <TouchableOpacity style={styles.PostItem} onPress={()=>{onPress(item)}}>
+            <TouchableOpacity
+              style={styles.PostItem}
+              onPress={() => {
+                onPress(item);
+              }}>
               <PostItem {...item} key={item.id} />
             </TouchableOpacity>
           ))}

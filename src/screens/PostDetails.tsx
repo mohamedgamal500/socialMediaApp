@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Image,
-  ScrollView,
-  Text,
-  Dimensions,
-} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 
 import {useRoute} from '@react-navigation/native';
 import PostItem from '../components/PostItem';
@@ -55,8 +48,7 @@ const PostDetails = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView
-        showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.card}>
           <PostItem {...item} key={item.id} />
           <View style={{marginTop: 30}}>

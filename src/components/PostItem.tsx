@@ -8,7 +8,8 @@ interface PostProps {
 }
 
 const PostItem = ({user_id, title, body}: PostProps) => {
-  const name = 'Mohamed Gamal Mohamed hhhhhhhhhhhhhhhhhfffffffffffffffffffffffffffffffffffffffffff';
+  const name =
+    'Mohamed Gamal Mohamed hhhhhhhhhhhhhhhhhfffffffffffffffffffffffffffffffffffffffffff';
   return (
     <>
       <View
@@ -27,7 +28,7 @@ const PostItem = ({user_id, title, body}: PostProps) => {
             style={styles.avatar}
             source={require('../images/avatar.png')}
           />
-          <View style={{flexShrink: 1 }}>
+          <View style={{flexShrink: 1}}>
             <Text
               style={{
                 fontSize: 15,
@@ -50,7 +51,6 @@ const PostItem = ({user_id, title, body}: PostProps) => {
 export default PostItem;
 
 const styles = StyleSheet.create({
-  container: {},
   avatar: {
     width: 60,
     height: 60,

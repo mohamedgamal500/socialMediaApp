@@ -10,7 +10,6 @@ interface CommentItemProps {
 }
 
 const CommentItem = ({name, body}: CommentItemProps) => {
- 
   return (
     <>
       <View
@@ -49,7 +48,6 @@ const CommentItem = ({name, body}: CommentItemProps) => {
 export default CommentItem;
 
 const styles = StyleSheet.create({
-  container: {},
   avatar: {
     width: 40,
     height: 40,
