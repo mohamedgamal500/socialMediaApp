@@ -135,7 +135,7 @@ const Home = () => {
       ) : (
         <View
           style={{
-            height: '70%',
+            flex:1,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
