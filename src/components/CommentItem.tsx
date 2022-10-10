@@ -3,10 +3,7 @@ import {View, StyleSheet, Image, Text} from 'react-native';
 
 interface CommentItemProps {
   body: string;
-  id: number;
-  post_id: number;
   name: string;
-  email: string;
 }
 
 const CommentItem = ({name, body}: CommentItemProps) => {

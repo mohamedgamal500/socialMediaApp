@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, StyleSheet, Image, Text} from 'react-native';
+import {IUser} from '../interface';
+import {handleGetUser} from '../services';
 
 interface PostProps {
   user_id: number;
@@ -8,8 +10,17 @@ interface PostProps {
 }
 
 const PostItem = ({user_id, title, body}: PostProps) => {
-  const name =
-    'Mohamed Gamal Mohamed hhhhhhhhhhhhhhhhhfffffffffffffffffffffffffffffffffffffffffff';
+  const [user, setUser] = useState<IUser | null>(null);
+
+  useEffect(() => {
+    handleGetUser(user_id)
+      .then(res => {
+        setUser(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [user_id]);
   return (
     <>
       <View
@@ -34,7 +45,7 @@ const PostItem = ({user_id, title, body}: PostProps) => {
                 fontSize: 15,
                 color: '#1E1F20',
               }}>
-              {name}
+              {user?.name}
             </Text>
           </View>
         </View>
