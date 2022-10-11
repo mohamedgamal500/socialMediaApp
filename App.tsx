@@ -3,7 +3,7 @@ import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import RootStack from './src/navigations';
-import SplashScreen from 'react-native-splash-screen'
+import SplashScreen from 'react-native-splash-screen';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -13,8 +13,10 @@ const App = () => {
   };
 
   React.useEffect(() => {
-    SplashScreen.hide();
-  },[]);
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+  }, []);
 
   return (
     <SafeAreaView style={{...backgroundStyle, flex: 1}}>
